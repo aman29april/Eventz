@@ -1,0 +1,18 @@
+.clock-event{class: event_type_class(clock_event.event_type)}
+  .avatar-with-name{title: clock_event.username}
+    = user_avatar(clock_event.username)
+    .username
+      =display_username(clock_event.username)
+  .event-body
+    .event-type
+      -#%div=event_type(clock_event.event_type)
+      %label.switch
+        =check_box("event_type", clock_event.event_type, {disabled: true, checked: clock_event.event_type})
+        %span.slider.round
+    .event-time=formatted_time clock_event.event_at
+    .event-footer
+      .event-options
+        %span
+          =link_to 'Edit', edit_clock_event_path(clock_event)
+        %span.delete
+          =link_to 'Delete', clock_event, method: :delete, data: { confirm: 'Are you sure?' }

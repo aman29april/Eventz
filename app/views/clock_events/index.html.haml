@@ -1,0 +1,14 @@
+-#%p#notice.alert.alert-success= notice
+-#:javascript
+-#  $(document).ready(function(){
+-#    hide(document.getElementsByClassName('alert'))
+-#    });
+
+%h1.page-title Clock Events
+-# = link_to 'New Clock Event', new_clock_event_path, class: 'new-event'
+= render 'new_form', clock_event: ClockEvent.new
+.events
+  - @clock_events.each do |clock_event|
+    = render partial: 'clock_event', locals: {clock_event: clock_event}
+
+%br/

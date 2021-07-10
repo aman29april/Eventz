@@ -1,0 +1,10 @@
+= form_with(model: clock_event, local: true, class: 'clock-event-form inline-form') do |form|
+  .field
+    = form.label :username, class: 'label'
+    = form.text_field :username, required: true
+  .field
+    %label.switch
+      = form.check_box :event_type
+      %span.slider.round
+  .actions
+    = form.submit "Create Event", class: 'event-btn'

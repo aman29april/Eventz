@@ -1,0 +1,178 @@
+@import "common";
+
+.event-btn{
+  display: block;
+  width: 100%;
+  margin-top: 1.6667em;
+  padding: 0.75em 0;
+  font: 1.8em $font-roboto;
+  color: $color-white;
+  background: $color-link;
+  text-align: center;
+  border-radius: 3em;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  transition: background 0.1s;
+  -webkit-transition: background 0.1s;
+  cursor: pointer;
+}
+
+.event-btn:hover {
+  background: $color-link-hover;
+  color: $color-white;
+}
+.inline-form{
+
+  .field{
+    display: inline-block;
+    input[type='text'], .clock-event-form input[type='datetime-local']{
+      width: auto;
+      min-width: 300px;
+    }
+  }
+  .switch{
+    float: right;
+    top: 36px;
+
+  }
+  .actions{
+    top: 36px;
+    position: relative;
+    float: right;
+    display: inline-block;
+    .event-btn{
+      display: inline-block;
+      //max-width: 100px;
+      padding: 0.5em 1em;
+      margin-top: 0px;
+      font-size: 1.4em;
+      border-radius: 1em;
+    }
+  }
+
+}
+.clock-event-form{
+  .field{
+    margin-bottom: 2em;
+  }
+  input[type='text'],input[type='datetime-local']{
+    width: 100%;
+    border-radius: .7em;
+    padding: 0.5em 1.2em;
+    outline: none;
+    font: 1.5em $font-roboto;
+  }
+
+  .label{
+    font: 1.5em $font-roboto;
+    margin-left: 10px;
+    color: ghostwhite;
+  }
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+/*********** The slider ***********/
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  //max-width: 100px;
+  //height: 30px;
+}
+.slider:after {
+  content: 'OUT';
+  color: black;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  font-size: 15px;
+  display: block;
+  font-weight: bold;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $color-link;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  background-color: white;
+}
+input:checked + .slider {
+  background-color: $color-link;
+}
+
+input:checked + .slider:after {
+  content:'IN';
+  color: white;
+  top: 50%;
+  left: 25%;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $color-link;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+.alert {
+  font-weight: bold;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
+  margin-bottom: 18px;
+  padding: 12px 25px 12px 24px;
+  -moz-box-shadow: 3px 3px 1px 1px #CCCCCC;
+  -webkit-box-shadow: 3px 3px 1px 1px #CCCCCC;
+  box-shadow: 3px 3px 1px 1px #CCCCCC;
+}
+.alert-success {
+  background-color: #c5ffc5;
+  border-color: #D6E9C6;
+  width: 280px;
+  color: black;
+  padding-top: 20px;
+}

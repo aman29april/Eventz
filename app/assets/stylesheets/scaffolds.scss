@@ -1,0 +1,168 @@
+@import "common";
+
+body {
+  background-color:#212020;
+  color: whitesmoke;
+  margin: 33px;
+  font-family: $font-roboto;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+a {
+  font-family: $font-roboto;
+  font-size: 1.3em;
+  color: $color-link;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}
+
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 0.75em 1.6667em;
+  outline: none;
+  border-radius: 2em;
+}
+
+.center { display: block; margin: auto; }
+
+.container{
+  max-width: 575px;
+  margin: 0 auto;
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+
+
+.event-type{
+  font-size: 1.6em;
+  position: relative;
+  left: 30%;
+  top: 1.5em;
+  float: left;
+}
+.avatar-with-name{
+  //margin: 1em;
+  max-width: 80px;
+  float: left;
+  .username{
+    font-size: 1.5em;
+    text-transform: capitalize;
+    margin-top: 8px;
+    text-align: center;
+  }
+}
+.event-body{
+  display: block;
+}
+.event-time{
+  float: right;
+  font: 1.3em $font-roboto;
+}
+.event-footer{
+  position: relative;
+  //top: 52px;
+  //float: right;
+}
+.event-options{
+  position: absolute;
+  top: 80px;
+  right: 0em;
+}
+.delete{
+  margin-left: 10px;
+}
+//.event-options, .event-time{
+//  float: right;
+//  margin-left: 20px;
+//  //padding: 3em 14em;
+//}
+
+//
+//.left{
+//  .event-options, .event-time{
+//    float: right;
+//  }
+//}
+//.right{
+//  .event-options, .event-time{
+//    float: left;
+//  }
+//}
+.bubble-left,
+.bubble-right {
+  display: block;
+  position: relative;
+  padding: .25em .5em;
+  margin-bottom: 2em;
+  //clear: both;
+  width:50%;
+}
+.clock-event{
+  display: block;
+  background-color: $light-gray;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  padding: 1em;
+}
+.clock-event::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.bubble-left {
+  float: left;
+  margin-right:10%;
+}
+.bubble-right {
+  float:right;
+  margin-left:10%
+}
+
+.page-title{
+  font: 3.2em $font-otomanopee;
+  text-align: center;
+}
