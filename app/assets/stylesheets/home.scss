@@ -27,37 +27,37 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
-  display: table;
+  label{
+    color: red;
+  }
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  margin: 10px 0px;
+  padding:12px;
+  color: #D8000C;
+  background-color: #FFBABA;
 
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
-  }
-
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
 }
 
+#error_explanation h2 {
+  display: none;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 1.1em;
+  list-style: none;
+  color: black;
+}
 label {
   display: block;
 }
-
 
 .form-input {
   display: block;
@@ -75,7 +75,6 @@ label {
   padding-top: 70px;
   padding-bottom: 20px;
 }
-
 
 .event-type{
   font-size: 1.6em;
@@ -104,8 +103,6 @@ label {
 }
 .event-footer{
   position: relative;
-  //top: 52px;
-  //float: right;
 }
 .event-options{
   position: absolute;
@@ -115,32 +112,7 @@ label {
 .delete{
   margin-left: 10px;
 }
-//.event-options, .event-time{
-//  float: right;
-//  margin-left: 20px;
-//  //padding: 3em 14em;
-//}
 
-//
-//.left{
-//  .event-options, .event-time{
-//    float: right;
-//  }
-//}
-//.right{
-//  .event-options, .event-time{
-//    float: left;
-//  }
-//}
-.bubble-left,
-.bubble-right {
-  display: block;
-  position: relative;
-  padding: .25em .5em;
-  margin-bottom: 2em;
-  //clear: both;
-  width:50%;
-}
 .clock-event{
   display: block;
   background-color: $light-gray;
@@ -152,14 +124,6 @@ label {
   content: "";
   clear: both;
   display: table;
-}
-.bubble-left {
-  float: left;
-  margin-right:10%;
-}
-.bubble-right {
-  float:right;
-  margin-left:10%
 }
 
 .page-title{

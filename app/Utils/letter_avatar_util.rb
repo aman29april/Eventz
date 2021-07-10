@@ -33,7 +33,7 @@ module LetterAvatarUtil
 
   def self.generate(name)
     char = name[0].upcase
-    {char: char, color: color(char)}
+    { char: char, color: color(char) }
   end
 
   def self.color(char)

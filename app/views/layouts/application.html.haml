@@ -9,4 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .container.center
+      - flash.each do |key, value|
+        .alert{class: key}
+          %p.notice= value
       = yield

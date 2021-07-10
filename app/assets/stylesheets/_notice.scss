@@ -1,0 +1,21 @@
+.info, .success, .warning, .error {
+  margin: 8px 0px;
+  padding:10px;
+  font-size: 1em;
+}
+.success:before {
+  padding-right: 5px;
+}
+
+.error:before {
+  padding-right: 5px;
+}
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+}
+
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+}

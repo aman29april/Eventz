@@ -1,5 +1,5 @@
 class ClockEvent < ApplicationRecord
-  validates :username, presence: true, allow_nil: false, length: {minimum: 3, maximum: 40}
+  validates :username, presence: true, allow_nil: false, length: { minimum: 3, maximum: 40 }
   validates :event_at, presence: true, allow_nil: false
   validates :event_type, allow_nil: false, inclusion: [true, false]
 
@@ -11,7 +11,6 @@ class ClockEvent < ApplicationRecord
   private
 
   def set_event_at
-    self.event_at = DateTime.now if self.new_record?
+    self.event_at = DateTime.now if new_record?
   end
-
 end

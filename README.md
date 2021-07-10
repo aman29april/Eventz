@@ -1,7 +1,7 @@
 
 # Eventz - Clock In/Out
 
-This README contains steps for local setup and more informaiton about the application
+This README contains steps for local setup and more information about the application
 
 ## Introduction
 Eventz is Ruby on Rails based application for clock in and out events. This is a MVP product with minimum functionalities that can be used by employees for logging IN and Out timings.
@@ -9,7 +9,7 @@ Eventz is Ruby on Rails based application for clock in and out events. This is a
 ## Tech Stack
 * Ruby (2.4.3)
 * Rails (5.2.6)
-* PostgreSQL
+* PostgreSQL (Versions 9.1 and up)
 
 ## Running Locally
 Make sure above requirements are fulfilled before running this application.
@@ -41,4 +41,5 @@ bin/rails test test/*
 ```
 ### Assumptions
 * Every clock event has a username field, which should be unique for the users.
-* Username will have length between 0 and 40
+* Username will have length between 3 and 40.
+* While displaying username on home page, it's trimmed if length is more than 10.

@@ -11,29 +11,3 @@ $light-gray: #333;
 $lighter-gray: #191818;
 $dark-gray: #161515;
 $semi-white: #ccc;
-
-#flashdiv {
-  float:left;
-  margin-left:20px;
-  margin-top:10px;
-}
-.flash{
-  padding:10px;
-  margin-bottom: 1em;
-}
-.warning{
-  background:#f3b9ba;
-  border: 1px solid #d8aeaf;
-}
-.notice{
-  background-color:#c8f4ba;
-  border: 1px solid #b0d6a3;
-}
-.notice strong{
-  background-color:#bee4b2;
-  padding: 2px;
-}
-.error{
-  background:#ff0000;
-  color: #fff;
-}
