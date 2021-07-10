@@ -1,8 +1,10 @@
 .clock-event
-  .avatar-with-name{title: clock_event.username}
-    = user_avatar(clock_event.username)
-    .username
-      =display_username(clock_event.username)
+
+  = link_to "/clock_events/user/#{clock_event.username}" do
+    .avatar-with-name{title: clock_event.username}
+      = user_avatar(clock_event.username)
+      .username
+        =display_username(clock_event.username)
   .event-body
     .event-type
       -#%div=event_type(clock_event.event_type)

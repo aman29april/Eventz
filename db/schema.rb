@@ -20,5 +20,6 @@ ActiveRecord::Schema.define(version: 20_210_709_200_612) do
     t.datetime 'event_at', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.index ['username'], name: 'index_clock_events_on_username'
   end
 end

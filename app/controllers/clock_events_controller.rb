@@ -16,8 +16,6 @@ class ClockEventsController < ApplicationController
         format.html { redirect_to clock_events_path, success: 'Clock event was successfully created.' }
       else
         format.html { redirect_to clock_events_path, error: @clock_event.errors.full_messages.to_sentence }
-        # @clock_events = ClockEvent.ordered_by_event.all
-        # format.html { render :index, locals:  {clock_event: @clock_event}}
       end
     end
   end
@@ -37,6 +35,10 @@ class ClockEventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to clock_events_url, success: 'Clock event was successfully destroyed.' }
     end
+  end
+
+  def user_events
+    @clock_events = ClockEvent.by_user(params[:username]).ordered_by_event
   end
 
   private

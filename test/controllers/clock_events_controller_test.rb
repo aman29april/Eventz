@@ -10,11 +10,6 @@ class ClockEventsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should get new' do
-    get new_clock_event_url
-    assert_response :success
-  end
-
   test 'should create clock_event' do
     assert_difference('ClockEvent.count') do
       post clock_events_url,
@@ -37,11 +32,11 @@ class ClockEventsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to clock_events_url
   end
 
-  # test 'should destroy clock_event' do
-  #   assert_difference('ClockEvent.count', -1) do
-  #     delete clock_events_url
-  #   end
-  #
-  #   assert_redirected_to clock_events_url
-  # end
+  test 'should destroy clock_event' do
+    assert_difference('ClockEvent.count', -1) do
+      delete clock_event_url(@clock_event)
+    end
+
+    assert_redirected_to clock_events_url
+  end
 end
