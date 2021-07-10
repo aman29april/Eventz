@@ -1,24 +1,44 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Eventz - Clock In/Out
 
-Things you may want to cover:
+This README contains steps for local setup and more informaiton about the application
 
-* Ruby version
+## Introduction
+Eventz is Ruby on Rails based application for clock in and out events. This is a MVP product with minimum functionalities that can be used by employees for logging IN and Out timings.
 
-* System dependencies
+## Tech Stack
+* Ruby (2.4.3)
+* Rails (5.2.6)
+* PostgreSQL
 
-* Configuration
+## Running Locally
+Make sure above requirements are fulfilled before running this application.
+Navigate to project directory and follow following commands
 
-* Database creation
+```bash
+bundle install
+```
+Above command will install all the required gems.
 
-* Database initialization
+```bash
+bin/rails db:setup
+```
+Above command will install all the required gems.
 
-* How to run the test suite
+```bash
+bin/rails server
+```
+Rails Server will start and you can visit `localhost:3000` in your web browser.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Live Version
+Live version can be found at
 
-* Deployment instructions
+## Running Tests
 
-* ...
+Run below command from project folder.
+```bash
+bin/rails test test/*
+```
+### Assumptions
+* Every clock event has a username field, which should be unique for the users.
+* Username will have length between 0 and 40
