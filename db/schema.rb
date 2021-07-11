@@ -17,9 +17,12 @@ ActiveRecord::Schema.define(version: 20_210_709_200_612) do
   create_table 'clock_events', force: :cascade do |t|
     t.string 'username', null: false
     t.boolean 'event_type', null: false
-    t.datetime 'event_at', null: false
+    t.datetime 'clock_in_at', null: false
+    t.datetime 'clock_out_at'
+    t.float 'hours_clocked', default: 0.0
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.index ['clock_in_at'], name: 'index_clock_events_on_clock_in_at'
     t.index ['username'], name: 'index_clock_events_on_username'
   end
 end

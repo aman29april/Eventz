@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :clock_events, except: :show do
+  resources :clock_events, except: :show
+
+  resources :users do
     collection do
-      get 'user/:username', to: 'clock_events#user_events'
+      get ':username', to: 'users#user_events'
+      put ':username/log_user_event', to: 'users#log_user_event'
     end
   end
 

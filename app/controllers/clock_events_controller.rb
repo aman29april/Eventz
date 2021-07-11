@@ -1,3 +1,4 @@
+require_relative '../services/event_creation_service'
 class ClockEventsController < ApplicationController
   before_action :set_clock_event, only: %i[edit update destroy]
 
@@ -9,36 +10,25 @@ class ClockEventsController < ApplicationController
   def edit; end
 
   def create
-    @clock_event = ClockEvent.new(clock_event_params)
-
-    respond_to do |format|
-      if @clock_event.save
-        format.html { redirect_to clock_events_path, success: 'Clock event was successfully created.' }
-      else
-        format.html { redirect_to clock_events_path, error: @clock_event.errors.full_messages.to_sentence }
-      end
+    @clock_event = EventCreationService.create_event(clock_create_params)
+    if @clock_event.save
+      redirect_to clock_events_path, success: 'Clock event was successfully created.'
+    else
+      redirect_to clock_events_path, error: @clock_event.errors.full_messages.to_sentence
     end
   end
 
   def update
-    respond_to do |format|
-      if @clock_event.update(clock_event_params)
-        format.html { redirect_to clock_events_path, success: 'Clock event was successfully updated.' }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-      end
+    if @clock_event.update(clock_update_params)
+      redirect_to clock_events_path, success: 'Clock event was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @clock_event.destroy
-    respond_to do |format|
-      format.html { redirect_to clock_events_url, success: 'Clock event was successfully destroyed.' }
-    end
-  end
-
-  def user_events
-    @clock_events = ClockEvent.by_user(params[:username]).ordered_by_event
+    redirect_back(fallback_location: clock_events_path, success: 'Clock event was successfully destroyed.')
   end
 
   private
@@ -47,7 +37,14 @@ class ClockEventsController < ApplicationController
     @clock_event = ClockEvent.find(params[:id])
   end
 
-  def clock_event_params
-    params.require(:clock_event).permit(:username, :event_type, :event_at)
+  def clock_create_params
+    params.require(:clock_event)
+          .permit(:username, :event_type, :clock_in_at)
+  end
+
+  def clock_update_params
+    params.require(:clock_event)
+          .permit(:username, :event_type, :clock_in_at, :clock_out_at)
+          .merge(is_update: true)
   end
 end

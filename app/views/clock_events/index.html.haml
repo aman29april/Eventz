@@ -2,5 +2,5 @@
 = render 'new_form', clock_event: @clock_event
 .events
   - @clock_events.each do |clock_event|
-    = render partial: 'clock_event', locals: {clock_event: clock_event}
+    = render partial: 'shared/clock_event', locals: {clock_event: clock_event}
 %br/
