@@ -20,3 +20,8 @@ max_diff_8:
   event_type: true
   clock_in_at: 2021-07-10 01:36:12
   clock_out_at: 2021-07-010 11:36:12
+
+unique_user:
+  username: jing
+  event_type: true
+  clock_in_at: 2021-07-10 01:36:12

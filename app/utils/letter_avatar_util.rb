@@ -1,7 +1,4 @@
 module LetterAvatarUtil
-  include ActionView::Helpers::TagHelper
-  include ActionView::Context
-
   COLORS = [
     [226, 95, 81], # A
     [242, 96, 145], # B
@@ -31,13 +28,15 @@ module LetterAvatarUtil
     [173, 214, 125] # Z
   ].freeze
 
+  DEFAULT_COLOR = [173, 214, 125]
+
   def self.generate(name)
     char = name[0].upcase
     { char: char, color: color(char) }
   end
 
   def self.color(char)
-    COLORS[char.ord - 65]
-    "rgb(#{COLORS[char.ord - 65].join(',')})"
+    color = COLORS[char.ord - 65] || DEFAULT_COLOR
+    "rgb(#{color.join(',')})"
   end
 end

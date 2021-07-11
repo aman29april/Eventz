@@ -1,4 +1,3 @@
-require_relative '../services/event_creation_service'
 class ClockEventsController < ApplicationController
   before_action :set_clock_event, only: %i[edit update destroy]
 
