@@ -1,9 +1,6 @@
 = form_with(model: clock_event, local: true, class: 'clock-event-form') do |form|
   - if clock_event.errors.any?
     #error_explanation
-      %h2
-        = pluralize(clock_event.errors.count, "error")
-        prohibited this clock_event from being saved:
       %ul
         - clock_event.errors.full_messages.each do |message|
           %li= message
@@ -11,12 +8,13 @@
     = form.label :username, class: 'label'
     = form.text_field :username, required: true
   .field
-    = form.label :event_at, class: 'label'
-    = form.datetime_field :event_at, required: true
+    = form.label :clock_in_at, class: 'label'
+    = form.datetime_field :clock_in_at, required: true
   .field
-    = form.label :event_type, class: 'label'
-    %label.switch
-      = form.check_box :event_type
-      %span.slider.round
+    = form.label :clock_out_at, class: 'label'
+    = form.datetime_field :clock_out_at
+
+    =form.hidden_field :event_type
+
   .actions
     = form.submit "Update Clock Event", class: 'event-btn'

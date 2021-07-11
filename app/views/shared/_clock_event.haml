@@ -1,0 +1,35 @@
+.clock-event{class: clock_event.complete? ? "event-complete" : ""}
+
+  = link_to "/users/#{clock_event.username}" do
+    .avatar-with-name{title: clock_event.username}
+      = user_avatar(clock_event.username)
+      .username
+        =display_username(clock_event.username)
+  .event-body
+    .event-type
+      -if clock_event.incomplete?
+        %label.switch
+          =check_box("event_type", clock_event.event_type, {disabled: true, checked: clock_event.event_type})
+          %span.slider.round
+    .event-time
+      .in-time
+        %span
+        In:
+        %span
+          =formatted_time clock_event.clock_in_at
+    .clearfix
+    -if clock_event.complete?
+      .event-time
+        .out
+          %span
+            Out:
+          %span
+            =formatted_time clock_event.clock_out_at
+      .time-spent
+        Spent #{clock_event.hours_clocked.to_f.round(2)} hrs
+    .event-footer
+      .event-options
+        %span
+          =link_to 'Edit', edit_clock_event_path(clock_event)
+        %span.delete
+          =link_to 'Delete', clock_event, method: :delete, data: { confirm: 'Are you sure?' }

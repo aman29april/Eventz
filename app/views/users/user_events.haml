@@ -1,0 +1,16 @@
+%h1.page-title Clock Events for #{params[:username]}
+-if @clock_events.any?
+  %h2.text-center.color-secondary #{hours_for_day} hrs Clocked for the day
+= link_to 'Back', clock_events_path
+.user-clock-action
+  -if @has_pending_event
+    =link_to "Clock OUT", {action: "log_user_event", event_type: '0'}, method: :put, title: "Click to clock OUT"
+  -else
+    =link_to "Clock IN", {action: "log_user_event", event_type: '1'}, method: :put, title: "Click to clock IN"
+.events
+  - @clock_events.each do |clock_event|
+    = render partial: 'shared/clock_event', locals: {clock_event: clock_event}
+%br/
+
+-if @clock_events.empty?
+  %h2.text-center No Events Found

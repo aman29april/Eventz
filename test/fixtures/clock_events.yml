@@ -1,9 +1,22 @@
 one:
-  username: MyString
-  event_type: false
-  event_at: 2021-07-10 01:36:12
+  username: sam
+  event_type: true
+  clock_in_at: 2021-07-10 01:36:12
 
 two:
-  username: MyString
-  event_type: false
-  event_at: 2021-07-10 01:36:12
+  username: aman
+  event_type: true
+  clock_in_at: 2021-07-10 01:36:12
+  clock_out_at: nil
+
+invalid_out:
+  username: aman
+  event_type: true
+  clock_in_at: 2021-07-10 01:36:12
+  clock_out_at: 2021-07-09 01:36:12
+
+max_diff_8:
+  username: aman
+  event_type: true
+  clock_in_at: 2021-07-10 01:36:12
+  clock_out_at: 2021-07-010 11:36:12
